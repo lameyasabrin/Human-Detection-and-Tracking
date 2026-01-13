@@ -398,18 +398,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - OpenCV community
 - PyTorch team
 
-## 📧 Contact
-
-Your Name - [@yourhandle](https://twitter.com/yourhandle)
-
-Project Link: [https://github.com/yourusername/human-detection-tracking](https://github.com/yourusername/human-detection-tracking)
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/human-detection-tracking&type=Date)](https://star-history.com/#yourusername/human-detection-tracking&Date)
-
----
-
-<div align="center">
-Made with ❤️ by the Computer Vision Community
-</div>
