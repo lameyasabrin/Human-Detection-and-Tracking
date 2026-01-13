@@ -1,0 +1,105 @@
+# Configuration file for Human Detection and Tracking System
+
+detector:
+  # Detection model: yolov8n, yolov8s, yolov8m, yolov5, fasterrcnn
+  model: yolov8n
+  
+  # Confidence threshold for detections (0.0 - 1.0)
+  confidence: 0.5
+  
+  # Device: cuda or cpu
+  device: cuda
+  
+  # Input size for model
+  input_size: 640
+
+tracker:
+  # Tracking method: sort, deepsort, bytetrack
+  method: deepsort
+  
+  # Maximum frames to keep a track alive without detection
+  max_age: 30
+  
+  # Minimum hits before confirming a track
+  min_hits: 3
+  
+  # IoU threshold for matching detections to tracks
+  iou_threshold: 0.3
+
+analytics:
+  # Enable heatmap generation
+  enable_heatmap: true
+  
+  # Enable people counting
+  enable_counting: true
+  
+  # Save trajectory data
+  save_trajectories: true
+  
+  # Define zones for entry/exit counting
+  zones:
+    - name: entrance
+      # Polygon points: [x, y] coordinates
+      points: 
+        - [100, 100]
+        - [300, 100]
+        - [300, 200]
+        - [100, 200]
+      
+    - name: checkout
+      points:
+        - [400, 300]
+        - [600, 300]
+        - [600, 400]
+        - [400, 400]
+
+visualization:
+  # Draw bounding boxes
+  draw_boxes: true
+  
+  # Draw track IDs
+  draw_ids: true
+  
+  # Draw trajectories
+  draw_trajectory: true
+  
+  # Trajectory length (number of points)
+  trajectory_length: 30
+  
+  # Line thickness
+  line_thickness: 2
+  
+  # Font scale
+  font_scale: 0.6
+
+output:
+  # Save output video
+  save_video: true
+  
+  # Save analytics as JSON
+  save_json: true
+  
+  # Save frame snapshots
+  save_snapshots: false
+  
+  # Output video FPS
+  fps: 30
+  
+  # Video codec: mp4v, avc1, xvid
+  codec: mp4v
+  
+  # Output directory
+  output_dir: ./output
+
+performance:
+  # Resize input for faster processing (0 to disable)
+  resize_width: 0
+  
+  # Skip frames for faster processing (1 = process all frames)
+  frame_skip: 1
+  
+  # Maximum number of detections per frame (0 = unlimited)
+  max_detections: 0
+  
+  # Use half precision (FP16) for faster inference
+  half_precision: false
